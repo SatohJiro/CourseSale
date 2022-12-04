@@ -1,18 +1,11 @@
-//layout
-import {HeaderOnly} from "~/components/Layout"
+import { ROUTE_NAME } from "./routesConstant";
 
 import Home from "~/pages/Home";
-import Following from "~/pages/Following";
-import Profile from "~/pages/Profile";
-import Upload from "~/pages/Upload";
-import Search from "~/pages/Search";
+import Courses from "~/pages/Courses";
 
 const publicRoutes = [
-  { path: "/", component: Home },
-  { path: "/following", component: Following },
-  { path: "/profile", component: Profile },
-  { path: "/upload", component: Upload , layout: HeaderOnly },
-  { path: "/search", component: Search , layout: null },
+  { path: ROUTE_NAME.ROOT, component: Home },
+  { path: ROUTE_NAME.COURSES, component: Courses },
 ];
 const privateRoutes = [];
 export { publicRoutes, privateRoutes };
