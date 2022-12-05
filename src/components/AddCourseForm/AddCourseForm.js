@@ -2,8 +2,6 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import style from './AddCourseFormStyle.module.scss'
 
-import Header from "~/layout/components/Header";
-import Sidebar from "~/layout/components/Sidebar";
 
 const cx = classNames.bind(style);
 

@@ -17,9 +17,9 @@ const Login = () => {
               type="password"
               placeholder="Password"
             />
-            <a href="#" className="text-link font-medium text-left">
+            <div href="#" className="text-link font-medium text-left">
               Forgot your password?
-            </a>
+            </div>
             <button className="uppercase font-semibold w-full h-[56px] py-4 bg-link text-white rounded-lg">
               Login
             </button>
