@@ -1,5 +1,8 @@
+import React from "react";
+import AddCourseForm from "~/components/AddCourseForm";
+
 function Home() {
-    return ( <h2>Home Page</h2> );
+    return (<AddCourseForm />);
 }
 
 export default Home;
