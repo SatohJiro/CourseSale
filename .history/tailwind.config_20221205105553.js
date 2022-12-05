@@ -9,7 +9,7 @@ module.exports = {
       backgroundImage: {
         login: "url('../assets/img/login/login.png')",
       },
-      keyframes: {
+      keyframs: {
         pan: {
           "100%": { backgroundPosition: "15% 50%" },
         },
