@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 import CourseItem from "~/components/CourseItem";
 
 import { BiSortAlt2 } from "react-icons/bi";
+
 const cx = classNames.bind(styles);
 function Courses() {
   return (
@@ -39,15 +40,21 @@ function Courses() {
         <CourseItem></CourseItem>
         <CourseItem></CourseItem>
         <CourseItem></CourseItem>
-      
-      
       </div>
+
       <div className={cx("page-wrapper")}>
-      <div className={cx("page-item")}><span>1</span></div>
-      <div className={cx("page-item")}><span>2</span></div>
-      <div className={cx("page-item")}><span>3</span></div>
-      <div className={cx("page-item")}><span>4</span></div>
-      
+        <div className={cx("page-item")}>
+          <span>1</span>
+        </div>
+        <div className={cx("page-item")}>
+          <span>2</span>
+        </div>
+        <div className={cx("page-item")}>
+          <span>3</span>
+        </div>
+        <div className={cx("page-item")}>
+          <span>4</span>
+        </div>
       </div>
     </div>
   );
