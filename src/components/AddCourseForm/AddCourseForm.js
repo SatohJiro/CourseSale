@@ -19,35 +19,33 @@ function AddCourseForm() {
 
         <div>
             <div className={cx("title")}><p><b>Thêm khóa học mới</b></p></div>
-
             <form name="add-new-course" action='/add-course'>
-
-                <div class={cx("course-infor")}>
+                <div className={cx("course-infor")}>
                     <label><b>Tên khóa học</b></label>
                     <input type="text"></input>
                 </div>
 
-                <div class={cx("course-infor")}>
+                <div className={cx("course-infor")}>
                     <label><b>Thể loại</b></label>
                     <input type="text"></input>
                 </div>
 
-                <div class={cx("course-infor")}>
+                <div className={cx("course-infor")}>
                     <label><b>Mô tả khóa học</b></label>
                     <input type="text"></input>
                 </div>
 
-                <div class={cx("course-infor")}>
+                <div className={cx("course-infor")}>
                     <label><b>Giá tiền </b>(Đồng)</label>
                     <input type="text"></input>
                 </div>
 
-                <div class={cx("course-infor")}>
+                <div className={cx("course-infor")}>
                     <label><b>Manufacture</b></label>
                     <input type="datetime-local" id="current-time"></input>
                 </div>
 
-                <div class={cx("btn-container")}>
+                <div className={cx("btn-container")}>
                     <button type="submit">Thêm</button>
                 </div>
 
