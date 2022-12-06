@@ -3,11 +3,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { publicRoutes } from "~/routes";
 import { DefaultLayout } from "~/layout";
 
+import { useSelector } from "react-redux";
+import Auth from "./pages/Auth/Auth";
+
 function App() {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   return (
     <>
-      <Router>
-        <div className="App">
+      {isLoggedIn && (
+        <Router>
           <Routes>
             {publicRoutes.map((route, index) => {
               let Layout = DefaultLayout;
@@ -30,9 +34,9 @@ function App() {
               );
             })}
           </Routes>
-        </div>
-      </Router>
-      {/* <Login></Login> */}
+        </Router>
+      )}
+      {!isLoggedIn && <Auth></Auth>}
     </>
   );
 }

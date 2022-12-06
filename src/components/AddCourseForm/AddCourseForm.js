@@ -1,11 +1,20 @@
-import React from 'react';
-import classNames from 'classnames/bind';
-import style from './AddCourseFormStyle.module.scss'
-
+import React from "react";
+import classNames from "classnames/bind";
+import style from "./AddCourseFormStyle.module.scss";
 
 const cx = classNames.bind(style);
 
 function AddCourseForm() {
+  window.addEventListener("load", () => {
+    var now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    now.setMilliseconds(null);
+    now.setSeconds(null);
+    document.getElementById("current-time").value = now
+      .toISOString()
+      .slice(0, -1);
+  });
+
 
     window.addEventListener('load', () => {
         var now = new Date();
@@ -49,9 +58,18 @@ function AddCourseForm() {
                     <button type="submit">Thêm</button>
                 </div>
 
-            </form>
-
+        <div class={cx("course-infor")}>
+          <label>
+            <b>Manufacture</b>
+          </label>
+          <input type="datetime-local" id="current-time"></input>
         </div>
-    );
+
+        <div class={cx("btn-container")}>
+          <button type="submit">Thêm</button>
+        </div>
+      </form>
+    </div>
+  );
 }
 export default AddCourseForm;

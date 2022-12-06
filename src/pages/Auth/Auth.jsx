@@ -1,6 +1,12 @@
 import React from "react";
-
-const Login = () => {
+import { useDispatch } from "react-redux";
+import { authActions } from "~/store/auth-slice";
+const Auth = () => {
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(authActions.login());
+  };
   return (
     <>
       <div className="grid place-items-center h-[100vh] m-0 px-[24px] bg-login bg-no-repeat bg-cover animate-background-pan">
@@ -10,17 +16,20 @@ const Login = () => {
             <input
               className="p-4 border-2 rounded-lg"
               type="text"
-              placeholder="Username"
+              placeholder="admin01"
             />
             <input
               className="p-4 border-2 rounded-lg"
               type="password"
-              placeholder="Password"
+              placeholder="123456"
             />
-            <div href="#" className="text-link font-medium text-left">
+            <a href="/" className="text-link font-medium text-left">
               Forgot your password?
-            </div>
-            <button className="uppercase font-semibold w-full h-[56px] py-4 bg-link text-white rounded-lg">
+            </a>
+            <button
+              className="uppercase font-semibold w-full h-[56px] py-4 bg-link text-white rounded-lg"
+              onClick={handleSubmit}
+            >
               Login
             </button>
           </form>
@@ -30,4 +39,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Auth;
