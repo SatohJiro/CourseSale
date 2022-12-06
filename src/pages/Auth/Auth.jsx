@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = () => {
+const Auth = () => {
   return (
     <>
       <div className="grid place-items-center h-[100vh] m-0 px-[24px] bg-login bg-no-repeat bg-cover animate-background-pan">
@@ -30,4 +30,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Auth;

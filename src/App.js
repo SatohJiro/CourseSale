@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { publicRoutes } from "~/routes";
 import { DefaultLayout } from "~/layout";
-import Login from "./pages/Login/Login";
+import Auth from "./pages/Auth/Auth";
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-      {/* <Login></Login> */}
+      <Auth></Auth>
     </>
   );
 }
