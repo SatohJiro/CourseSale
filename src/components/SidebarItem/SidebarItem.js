@@ -7,12 +7,14 @@ import { useState } from "react";
 const cx = classNames.bind(styles);
 function SidebarItem({ data, isActive, setTabActive, haveSubMenu }) {
   const [subTabActive, setsubTabActive] = useState(data.subMenu[0].name);
+
   return (
     <div className={cx("wrapper")}>
       <Link
         to={data.path}
         className={cx("menu-item", isActive ? "active" : null)}
         onClick={() => {
+          setsubTabActive(data.subMenu[0].name);
           setTabActive(data.name);
         }}
       >
@@ -31,7 +33,6 @@ function SidebarItem({ data, isActive, setTabActive, haveSubMenu }) {
                 subTabActive === item.name ? "active" : null
               )}
               onClick={() => {
-                console.log(item.name, subTabActive);
                 setsubTabActive(item.name);
               }}
               key={index}
