@@ -1,8 +1,8 @@
 import React from "react";
-import AddCourseForm from "~/components/AddCourseForm";
+import AdminProfile from "~/components/AdminProfile";
 
 function Home() {
-    return (<AddCourseForm />);
+    return (<AdminProfile />);
 }
 
 export default Home;
