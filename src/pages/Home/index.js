@@ -1,8 +1,8 @@
 import React from "react";
-import AddCourseForm from "~/components/AddCourseForm";
+
 
 function Home() {
-    return (<AddCourseForm />);
+  return <></>;
 }
 
 export default Home;
