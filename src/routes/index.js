@@ -11,7 +11,6 @@ const publicRoutes = [
   { path: ROUTE_NAME.COURSES, component: Courses },
   { path: ROUTE_NAME.ADDCOURSE, component: AddCourses },
   { path: ROUTE_NAME.LOGIN, component: Auth },
-
 ];
 const privateRoutes = [];
 export { publicRoutes, privateRoutes };
