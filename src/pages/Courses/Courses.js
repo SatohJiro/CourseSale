@@ -24,10 +24,10 @@ function Courses() {
           <span className={cx("cate-product")}> CATEGORY</span>
           <BiSortAlt2 className={cx("sort-icon")} />
         </div>
-        <div className={cx("tags-wrapper")}>
+        {/* <div className={cx("tags-wrapper")}>
           <span className={cx("tags-product")}> TAGS </span>
           <BiSortAlt2 className={cx("sort-icon")} />
-        </div>
+        </div> */}
 
         <div className={cx("pubdate-wrapper")}>
           <span className={cx("pubdate-product")}>PUBLISHED ON</span>
