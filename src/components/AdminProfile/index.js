@@ -12,7 +12,7 @@ function AdminProfile() {
     <>
       <form>
         <div className={cx('avatar-container')}>
-          <img src={avatar}></img>
+          <img src={avatar}  alt="img"></img>
           <div className={cx('btn-container')}>
             <button>Đổi ảnh</button>
             <button>Xóa ảnh</button>
