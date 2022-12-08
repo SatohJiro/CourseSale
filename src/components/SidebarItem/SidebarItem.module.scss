@@ -19,11 +19,11 @@
     margin-left: 10px;
   }
   &:hover {
-    background-color: rgba(58, 53, 65, 0.04);
+    background-color: rgba(243, 240, 247, 0.04);
   }
   &.active {
-    color: #fff;
-    background-image: linear-gradient(98deg, #c6a7fe, #9155fd 94%);
+    background-color: rgba($color: #afc6ff, $alpha: 0.3);
+  backdrop-filter: blur(1px);
     box-shadow: 0px 4px 8px -4px rgb(58 53 65 / 42%);
   }
 }
@@ -33,13 +33,13 @@
   margin: -5px 0;
   padding-left: 10px;
   border-radius: 0 20px 20px 0;
-  color: #dadae0;
+  color: #99999b;
   + .menu-sub-item {
     margin-top: 10px;
   }
   &.active {
     background-clip: #fff;
-    background: -webkit-linear-gradient(#c6a7fe, #9155fd);
+    background:  #975ffd;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;

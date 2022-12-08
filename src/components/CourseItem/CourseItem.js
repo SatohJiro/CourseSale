@@ -29,12 +29,12 @@ function CourseItem() {
       <div className={cx("cate-wrapper")}>
         <span className={cx("cate-product")}> Cate Name</span>
       </div>
-      <div className={cx("tags-wrapper")}>
+      {/* <div className={cx("tags-wrapper")}>
         <span className={cx("tags-product")}> tag 1 </span>
         <span className={cx("tags-product")}> tag 1 </span>
         <span className={cx("tags-product")}> tag 1 </span>
         <span className={cx("tags-product")}> tag 123456 </span>
-      </div>
+      </div> */}
       <div
         className={cx("star-wrapper")}
         onClick={() => {

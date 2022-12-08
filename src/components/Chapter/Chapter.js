@@ -9,10 +9,12 @@ import {
   AiOutlineSetting,
 } from "react-icons/ai";
 import { useState } from "react";
+import ModalChapter from "../ModalChapter";
 
 const cx = classNames.bind(styles);
 function Chapter() {
   const [isShow, setShow] = useState(false);
+  const [isShowModal, setShowModal] = useState(false);
   return (
     <div className={cx("wrapper")}>
       <div className={cx("wrapper-content")}>
@@ -30,30 +32,27 @@ function Chapter() {
           <div className={cx("num-lession")}>2 Bài học</div>
         </div>
         <div className={cx("tools")}>
-          <AiOutlineSetting className={cx("tools-icon")} />
+          <AiOutlineSetting
+            className={cx("tools-icon")}
+            onClick={() => setShowModal(true)}
+          />
           <AiOutlineDelete className={cx("tools-icon")} />
         </div>
       </div>
       {isShow && (
         <div className={cx("sub-content-wrapper")}>
-          <div className={cx("content-chapter", "sub-wrapper")}>
-            <div className={cx("desc-wrapper")}>
-              <div className={cx("desc")}>1.1 Giới thiệu bài học</div>
+          <div className={cx("sub-item")}>
+            <div className={cx("content-chapter", "sub-wrapper")}>
+              <div className={cx("desc-wrapper")}>
+                <div className={cx("desc")}>1.1 Giới thiệu bài học</div>
+              </div>
+              <div className={cx("num-lession")}>3:33</div>
             </div>
-            <div className={cx("num-lession")}>3:33</div>
-          </div>
-          <div className={cx("content-chapter", "sub-wrapper")}>
-            <div className={cx("desc-wrapper")}>
-              <div className={cx("desc")}>1.2 Giới thiệu bài học</div>
+            <div className={cx("tools")}>
+              <AiOutlineDelete className={cx("tools-icon")} />
             </div>
-            <div className={cx("num-lession")}>3:33</div>
           </div>
-          <div className={cx("content-chapter", "sub-wrapper")}>
-            <div className={cx("desc-wrapper")}>
-              <div className={cx("desc")}>1.3 Giới thiệu bài học</div>
-            </div>
-            <div className={cx("num-lession")}>3:33</div>
-          </div>
+
           <div className={cx("content-chapter", "sub-wrapper")}>
             <div className={cx("desc-wrapper")}>
               <div className={cx("desc")}>Thêm bài học</div>
@@ -62,6 +61,7 @@ function Chapter() {
           </div>
         </div>
       )}
+      {isShowModal && <ModalChapter setShowModal={setShowModal} />}
     </div>
   );
 }
