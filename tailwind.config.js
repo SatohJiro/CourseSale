@@ -17,6 +17,10 @@ module.exports = {
       animation: {
         "background-pan": "pan 6s infinite alternate linear",
       },
+      fontFamily: {
+        dsc: "Diplomata SC",
+        nko: "Nerko One"
+      }
     },
   },
   plugins: [],
