@@ -33,24 +33,24 @@ const UserNav = () => {
                 <span className="text-[#ffffff] ml-5 font-bold">Nguyen Minh Chau</span>
                 {
                     showSubmenu ?
-                    <AiFillCaretDown className="text-[#ffffff] ml-5 text-base" />
-                    :
-                    <AiFillCaretUp className="text-[#ffffff] ml-5 text-base" />
+                        <AiFillCaretDown className="text-[#ffffff] ml-5 text-base" />
+                        :
+                        <AiFillCaretUp className="text-[#ffffff] ml-5 text-base" />
                 }
             </div>
             {
                 showSubmenu &&
-                <div className={"absolute bg-[#202129] rounded-xl w-full border-2 border-solid border-gray-500"}>
+                <div className={"absolute bg-[#202129] rounded-xl w-full border-2 border-solid border-gray-500 z-99"}>
                     <ul>
                         <li>
-                            <Link className="flex py-2 items-center hover:bg-[#383838]">
-                                <AiOutlineUser className="ml-2"/>
+                            <Link to="/profile" className="flex py-2 items-center hover:bg-[#383838]">
+                                <AiOutlineUser className="ml-2" />
                                 <span className="ml-2">Trang cá nhân</span>
                             </Link>
                         </li>
                         <li>
                             <Link className="flex py-2 items-center hover:bg-[#383838]">
-                                <AiOutlineLogout className="ml-2"/>
+                                <AiOutlineLogout className="ml-2" />
                                 <span className="ml-2">Đăng xuất</span>
                             </Link>
                         </li>
