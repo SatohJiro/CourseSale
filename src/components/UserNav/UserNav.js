@@ -1,4 +1,4 @@
-import classNames from "classnames/bind";
+// import classNames from "classnames/bind";
 import { useEffect, useRef, useState } from "react";
 import { AiFillCaretDown, AiFillCaretUp, AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const UserNav = () => {
 
     const url = "https://i.pinimg.com/736x/28/43/bb/2843bb8deeec72833bb5ecb42ea81c29.jpg";
-    const avtClassBg = "bg-[url('" + url + "')]";
+    // const avtClassBg = "bg-[url('" + url + "')]";
 
     const [showSubmenu, setShowSubmenu] = useState(false);
     let userRef = useRef();
@@ -28,7 +28,7 @@ const UserNav = () => {
         <div ref={userRef} className="relative">
             <div className={"h-full flex items-center select-none cursor-pointer hover:bg-[#383838] px-2 "} onClick={handleClick}>
                 <div className="w-16 h-16 rounded-full overflow-hidden">
-                    <img src={url} />
+                    <img src={url} alt="img" />
                 </div>
                 <span className="text-[#ffffff] ml-5 font-bold">Nguyen Minh Chau</span>
                 {
