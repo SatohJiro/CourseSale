@@ -34,10 +34,13 @@
     cursor: pointer;
   }
 }
+.sub-item{
+  display: flex;
+  align-items: center;
+}
 .sub-wrapper {
   margin-top: 3px;
   background-color: rgba($color: #afc6ff, $alpha: 0.01);
   cursor: default;
   width: 45%;
 }
-

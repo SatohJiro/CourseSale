@@ -1,63 +1,48 @@
-import styles from "./Courses.module.scss";
-import classNames from "classnames/bind";
-import CourseItem from "~/components/CourseItem";
+import DataTable from "react-data-table-component";
+import "./Courses.module.scss";
 
-import { BiSortAlt2 } from "react-icons/bi";
+const Courses = () => {
 
-const cx = classNames.bind(styles);
-function Courses() {
+  const columns = [
+    {
+      name: "Id",
+      selector: (row) => row.id
+    },
+    {
+      name: "Tên khóa học",
+      selector: (row) => row.title
+    },
+    {
+      name: "Giá",
+      selector: (row) => row.price
+    }
+  ];
+
+  const data = [
+    {
+      id: "1",
+      title: "Lập trình",
+      price: "1000"
+    },
+  ];
+
+  const customizeTableStyles = {
+    headCell: {
+      style: {
+        background: "black"
+      }
+    }
+  };
+
   return (
-    <div className={cx("wrapper")}>
-      <div className={cx("header-course")}>
-        <div className={cx("check-wrapper")}>
-          <input type={"checkbox"}></input>
-        </div>
-        <div className={cx("name-wrapper")}>
-          <span className={cx("name-product")}>COURSE NAME</span>
-          <BiSortAlt2 className={cx("sort-icon")} />
-        </div>
-        <div className={cx("price-wrapper")}>
-          <span className={cx("price-product")}> PRICE</span>
-          <BiSortAlt2 className={cx("sort-icon")} />
-        </div>
-        <div className={cx("cate-wrapper")}>
-          <span className={cx("cate-product")}> CATEGORY</span>
-          <BiSortAlt2 className={cx("sort-icon")} />
-        </div>
-        <div className={cx("tags-wrapper")}>
-          <span className={cx("tags-product")}> TAGS </span>
-          <BiSortAlt2 className={cx("sort-icon")} />
-        </div>
-
-        <div className={cx("pubdate-wrapper")}>
-          <span className={cx("pubdate-product")}>PUBLISHED ON</span>
-          <BiSortAlt2 className={cx("sort-icon")} />
-        </div>
-      </div>
-      <div className={cx("content-wrapper")}>
-        <CourseItem></CourseItem>
-        <CourseItem></CourseItem>
-        <CourseItem></CourseItem>
-        <CourseItem></CourseItem>
-        <CourseItem></CourseItem>
-      </div>
-
-      <div className={cx("page-wrapper")}>
-        <div className={cx("page-item")}>
-          <span>1</span>
-        </div>
-        <div className={cx("page-item")}>
-          <span>2</span>
-        </div>
-        <div className={cx("page-item")}>
-          <span>3</span>
-        </div>
-        <div className={cx("page-item")}>
-          <span>4</span>
-        </div>
-      </div>
+    <div className="bg-gray-50 w-full h-full p-5 relative z-[-1]">
+      <DataTable
+        title="Danh sách khóa học"
+        columns={columns}
+        data={data}
+        pagination/>
     </div>
   );
-}
+};
 
 export default Courses;

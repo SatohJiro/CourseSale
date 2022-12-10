@@ -7,7 +7,7 @@ import style from './Header.module.scss'
 const cx = classNames.bind(style);
 function Header() {
     return (
-        <div className="bg-[#202129] flex justify-between h-[65px] border-b-2 border-gray-700">
+        <div className="bg-[#202129] flex justify-between h-[65px] border-b-2 border-gray-700 px-10 py-2">
             <Logo />
             <Search />
             <UserNav />
