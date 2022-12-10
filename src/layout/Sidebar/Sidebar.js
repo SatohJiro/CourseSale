@@ -1,22 +1,11 @@
-import classNames from "classnames/bind";
-import style from "./Sidebar.module.scss";
+import { AiOutlineHome } from "react-icons/ai";
+import SidebarMenu from "~/components/SidebarMenu";
+import SidebarMenuItem from "~/components/SidebarMenuItem/SidebarMenuItem";
+import SidebarTitle from "~/components/SidebarTitle/SidebarTitle";
 
-
-// import SidebarMenu from "~/components/SidebarMenu";
-// import SidebarMenuItem from "~/components/SidebarMenuItem/SidebarMenuItem";
-// import SidebarTitle from "~/components/SidebarTitle/SidebarTitle";
-
-import { ROUTE_NAME } from "~/routes/routesConstant";
-import { AiFillHome, AiOutlineUnorderedList } from "react-icons/ai";
-
-import { useState } from "react";
-import SidebarItem from "~/components/SidebarItem";
-
-const cx = classNames.bind(style);
-
- const Sidebar = () => {
+const Sidebar = () => {
   return (
-     <div className="w-[245px] bg-[#202129] h-[100vh] p-2">
+    <div className="w-[245px] bg-[#202129] h-[100vh] p-2">
       <SidebarMenuItem
         path="/"
         icon={
@@ -61,15 +50,15 @@ const cx = classNames.bind(style);
           path="/"
           name="Danh sách hóa đơn" />
       </SidebarMenu>
-      <SidebarTitle name="Tài chính"/>
+      <SidebarTitle name="Tài chính" />
       <SidebarMenu
         name="Doanh thu">
         <SidebarMenuItem
           path="/addcourses"
           name="Thống kê doanh thu" />
       </SidebarMenu>
-     </div>
+    </div>
   );
- }
+}
 
 export default Sidebar;
