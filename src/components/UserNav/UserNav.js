@@ -20,7 +20,7 @@ const UserNav = () => {
     }
 
     const handleClickOutSide = (event) => {
-        if (!userRef.current.contains(event.target))
+        if (userRef.current != null && !userRef.current.contains(event.target))
             setShowSubmenu(false);
     };
 

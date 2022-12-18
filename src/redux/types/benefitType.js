@@ -1,0 +1,5 @@
+const ADD_LIST_BENEFIT = 'ADD_LIST_BENEFIT';
+
+export {
+    ADD_LIST_BENEFIT
+}

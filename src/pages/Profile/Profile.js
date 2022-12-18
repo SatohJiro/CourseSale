@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { AiOutlineLogout } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
 import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePassordForm";
 import FormChangeAvt from "../../components/FormChangeAvt/FormChangeAvt";
 import UserForm from "../../components/UserForm";
+import { openChangeAvtForm } from "../../redux/slices/profileSlice";
+import Loader from "../../components/Loader";
 
 const Profile = () => {
+
+    const loading = useSelector(state => state.loader.load);
+    const dispatch = useDispatch();
+    const showChangeAvtForm = useSelector(state => state.profile.showChangeAvtForm);
 
     const INFOR_ID = 1;
     const CHANGE_PASSWORD_ID = 2;
@@ -20,13 +27,14 @@ const Profile = () => {
     }
 
     return (
-        <div className="min-h-[93vh] bg-gray-100">
+        <div className="min-h-[93vh] bg-gray-100 mt-[100px]">
+            {loading && <Loader />}
             <div className="w-[60vw] bg-white mx-auto flex p-5 shadow-xl shadow-slate-600 rounded-xl mt-5">
                 <div className="w-[35%] border border-gray-300 p-5">
                     <div className="w-80 h-80 rounded-full overflow-hidden m-auto">
                         <img src="https://i.pinimg.com/736x/28/43/bb/2843bb8deeec72833bb5ecb42ea81c29.jpg" />
                     </div>
-                    <div className="text-center mt-2 font-bold text-blue-400 underline select-none hover:text-blue-600 cursor-pointer duration-300">
+                    <div className="text-center mt-2 font-bold text-blue-400 underline select-none hover:text-blue-600 cursor-pointer duration-300" onClick={() => dispatch(openChangeAvtForm())}>
                         <span>Đổi ảnh</span>
                     </div>
                     <div className="text-center text-5xl my-10">
@@ -71,9 +79,12 @@ const Profile = () => {
                     }
                 </div>
             </div>
-            <div className="w-full h-full absolute top-0 bg-neutral-700/70">
-                <FormChangeAvt />
-            </div>
+            {
+                showChangeAvtForm &&
+                <div className="w-full h-full absolute top-0 bg-neutral-700/70">
+                    <FormChangeAvt />
+                </div>
+            }
         </div>
     );
 };
