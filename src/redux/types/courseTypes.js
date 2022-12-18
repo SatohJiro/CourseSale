@@ -1,0 +1,7 @@
+const ADD_COURSE = 'ADD_COURSE';
+const GET_ALL_COURSES = 'GET_ALL_COURSES';
+
+export {
+    ADD_COURSE,
+    GET_ALL_COURSES
+}

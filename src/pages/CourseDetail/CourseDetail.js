@@ -1,10 +1,15 @@
 import { AiOutlineCheck } from "react-icons/ai";
+import { useSelector } from "react-redux";
 import ChapterToggle from "../../components/ChapterToggle.js";
 import LessonItem from "../../components/LessonItem/LessonItem.js";
+import Loader from "../../components/Loader";
 
 const CourseDetail = () => {
+    const loading = useSelector(state => state.loader.load);
+
     return (
         <div className="flex bg-gray-100 p-10">
+            {loading && <Loader />}
             <div className="w-[65%] bg-white p-10 mr-10 shadow-xl">
                 <div className="font-bold text-5xl mb-10">
                     <span>Lập trình</span>

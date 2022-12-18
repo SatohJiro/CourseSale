@@ -5,7 +5,7 @@ import SidebarTitle from "~/components/SidebarTitle/SidebarTitle";
 
 const Sidebar = () => {
   return (
-    <div className="w-[245px] bg-[#202129] h-[100vh] p-2">
+    <div className="w-[245px] bg-[#202129] min-h-screen pt-[100px] p-2">
       <SidebarMenuItem
         path="/"
         icon={
@@ -13,6 +13,12 @@ const Sidebar = () => {
         }
         name="Trang chủ" />
       <SidebarTitle name="Khóa học" />
+      <SidebarMenu
+        name="Danh mục">
+        <SidebarMenuItem
+          path="/category-list"
+          name="Danh sách danh mục" />
+      </SidebarMenu>
       <SidebarMenu
         name="Khóa học">
         <SidebarMenuItem
@@ -25,20 +31,26 @@ const Sidebar = () => {
       <SidebarMenu
         name="Chương">
         <SidebarMenuItem
-          path="/courses"
+          path="/chapter-list"
           name="Danh sách chương" />
-        <SidebarMenuItem
-          path="/addcourses"
-          name="Thêm chương" />
       </SidebarMenu>
       <SidebarMenu
         name="Bài học">
         <SidebarMenuItem
-          path="/courses"
+          path="/lesson-video-list"
           name="Danh sách bài học" />
         <SidebarMenuItem
-          path="/addcourses"
+          path="/add-lesson-video"
           name="Thêm bài học" />
+      </SidebarMenu>
+      <SidebarMenu
+        name="Bài tập">
+        <SidebarMenuItem
+          path="/lesson-question-list"
+          name="Danh sách bài tập" />
+        <SidebarMenuItem
+          path="/add-lesson-question"
+          name="Thêm bài tập" />
       </SidebarMenu>
       <SidebarTitle name="Người dùng" />
       <SidebarMenu

@@ -8,7 +8,7 @@ import Auth from "./pages/Auth/Auth";
 import WebFont from "webfontloader";
 
 function App() {
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const isLoggedIn = true;
 
   useEffect(() => {
     WebFont.load({
