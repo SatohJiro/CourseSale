@@ -12,6 +12,9 @@ import {
   Title,
 } from "chart.js";
 import { Pie, Bar } from "react-chartjs-2";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { GET_ALL_ORDER } from "../../redux/types/orderTypes";
 
 ChartJs.register(
   ArcElement,
@@ -24,36 +27,41 @@ ChartJs.register(
 );
 
 const Chart = () => {
+  const orders = useSelector((state) => state.order.orders);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: GET_ALL_ORDER,
+    });
+  }, []);
+
+  console.log(orders);
+  const labels = [];
+  const dataOfPie =[];
+  orders.map((item) => {
+    labels.push(item.id);
+    dataOfPie.push(item.total);
+  });
+  
+
   const dataPie = {
-    labels: ["One", "Two", "Three"],
+   labels,
     datasets: [
       {
-        data: [3, 6, 9],
+        data: dataOfPie,
         backgroundColor: ["aqua", "redorange", "purple"],
       },
     ],
   };
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-  ];
+
   const dataBar = {
     labels,
     datasets: [
       {
-        label: "Dataset 1",
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+        label: "ID hóa đơn",
+        data: labels.map((item, index) => orders[index].total),
         backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "Dataset 2",
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],
   };
@@ -65,7 +73,7 @@ const Chart = () => {
       },
       title: {
         display: true,
-        text: "Chart.js Bar Chart",
+        text: "Doanh thu trong ngày " + orders[0].purchaseDate,
       },
     },
   };
