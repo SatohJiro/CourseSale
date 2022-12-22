@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     user: undefined,
+    newUser: undefined,
     showChangeAvtForm: false
 };
 
@@ -20,9 +21,21 @@ const profileSlice = createSlice({
                 ...state,
                 showChangeAvtForm: false
             }
+        },
+        setUser: (state, action) => {
+            return {
+                ...state,
+                user: action.payload
+            }
+        },
+        setNewUser: (state, action) => {
+            return{
+                ...state,
+                newUser: action.payload
+            }
         }
     }
 });
 
-export const {openChangeAvtForm, closeChangeAvtForm} = profileSlice.actions;
+export const {openChangeAvtForm, closeChangeAvtForm, setUser, setNewUser} = profileSlice.actions;
 export default profileSlice.reducer;

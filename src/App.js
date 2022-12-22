@@ -1,14 +1,25 @@
-import { Fragment, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Fragment, useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { publicRoutes } from "~/routes";
 import { DefaultLayout } from "~/layout";
-
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Auth from "./pages/Auth/Auth";
 import WebFont from "webfontloader";
+import { setUser } from './redux/slices/profileSlice';
+import { GET_USER_BY_ID } from "./redux/types/userTypes";
 
 function App() {
-  const isLoggedIn = true;
+  const [isLoggedIn, setLoggedIn] = useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const userId = sessionStorage.getItem('userId');
+    if (!userId) setLoggedIn(false);
+    else dispatch({
+      type: GET_USER_BY_ID,
+      id: userId,
+    });
+  })
 
   useEffect(() => {
     WebFont.load({

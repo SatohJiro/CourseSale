@@ -12,6 +12,7 @@ const Profile = () => {
     const loading = useSelector(state => state.loader.load);
     const dispatch = useDispatch();
     const showChangeAvtForm = useSelector(state => state.profile.showChangeAvtForm);
+    const user = useSelector(state => state.profile.user);
 
     const INFOR_ID = 1;
     const CHANGE_PASSWORD_ID = 2;
@@ -38,7 +39,7 @@ const Profile = () => {
                         <span>Đổi ảnh</span>
                     </div>
                     <div className="text-center text-5xl my-10">
-                        <span>Nguyễn Minh Châu</span>
+                        <span>{user && user.fname}</span>
                     </div>
 
                     <div className="text-3xl pl-[10%] select-none">
