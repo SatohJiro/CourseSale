@@ -59,7 +59,7 @@ const Sidebar = () => {
           path="/addcourses"
           name="Danh sách tài khoản" />
         <SidebarMenuItem
-          path="/"
+          path="/order-list"
           name="Danh sách hóa đơn" />
       </SidebarMenu>
       <SidebarTitle name="Tài chính" />

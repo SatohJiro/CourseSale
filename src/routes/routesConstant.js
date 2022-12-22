@@ -10,6 +10,8 @@ const LESSON_VIDEO_LIST = "/lesson-video-list";
 const ADD_LESSON_QUESTION = "/add-lesson-question";
 const LESSON_QUESTION_LIST = "/lesson-question-list";
 const ADD_LESSON_VIDEO = "/add-lesson-video";
+const ORDER_LIST = "/order-list";
+const ORDER_DETAIL = "/order-detail";
 
 export const ROUTE_NAME = {
   LOGIN: LOGIN,
@@ -24,4 +26,6 @@ export const ROUTE_NAME = {
   ADD_LESSON_QUESTION: ADD_LESSON_QUESTION,
   LESSON_QUESTION_LIST: LESSON_QUESTION_LIST,
   ADD_LESSON_VIDEO: ADD_LESSON_VIDEO,
+  ORDER_LIST: ORDER_LIST,
+  ORDER_DETAIL: ORDER_DETAIL,
 };

@@ -5,6 +5,8 @@ import { allChapterSaga } from "./sagas/chapterSaga";
 import { allCourseSaga } from "./sagas/courseSaga";
 import { allLessonQuestionSaga } from "./sagas/lessonQuestionSaga";
 import { allLessonVideoSaga } from "./sagas/lessonVideoSaga";
+import { allOrderSaga } from "./sagas/orderSaga";
+import { allUserSaga } from "./sagas/userSaga";
 
 export function* rootSaga(){
     yield all([
@@ -13,6 +15,8 @@ export function* rootSaga(){
         fork(allBenefitSaga),
         fork(allChapterSaga),
         fork(allLessonVideoSaga),
-        fork(allLessonQuestionSaga)
+        fork(allLessonQuestionSaga),
+        fork(allOrderSaga),
+        fork(allUserSaga)
     ])
 }
