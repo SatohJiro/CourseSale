@@ -15,22 +15,24 @@ import LessonQuestionList from "../pages/LessonQuestionList";
 import AddLessonVideo from "../pages/AddLessonVideo";
 import OrderList from "../pages/OrderList";
 import OrderDetail from "../pages/OrderDetail";
+import Revenue from "../pages/Revenue";
 
 const publicRoutes = [
   { path: ROUTE_NAME.ROOT, component: Home },
   { path: ROUTE_NAME.COURSES, component: Courses },
   { path: ROUTE_NAME.ADDCOURSE, component: AddCourses },
-  { path: ROUTE_NAME.LOGIN, component: Auth, layout : null},
-  { path: ROUTE_NAME.PROFILE, component: Profile, layout: NoneSideBarLayout},
-  { path: ROUTE_NAME.COURSE_DETAIL, component: CourseDetail},
-  { path: ROUTE_NAME.CATEGORY_LIST, component: CategoryList},
-  { path: ROUTE_NAME.CHAPTER_LIST, component: ChapterList},
-  { path: ROUTE_NAME.LESSON_VIDEO_LIST, component: LessonVideoList},
-  { path: ROUTE_NAME.ADD_LESSON_QUESTION, component: AddLessonQuestion},
-  { path: ROUTE_NAME.LESSON_QUESTION_LIST, component: LessonQuestionList},
-  { path: ROUTE_NAME.ADD_LESSON_VIDEO, component: AddLessonVideo},
-  { path: ROUTE_NAME.ORDER_LIST, component: OrderList},
-  { path: ROUTE_NAME.ORDER_DETAIL, component: OrderDetail}
+  { path: ROUTE_NAME.LOGIN, component: Auth, layout: null },
+  { path: ROUTE_NAME.PROFILE, component: Profile, layout: NoneSideBarLayout },
+  { path: ROUTE_NAME.COURSE_DETAIL, component: CourseDetail },
+  { path: ROUTE_NAME.CATEGORY_LIST, component: CategoryList },
+  { path: ROUTE_NAME.CHAPTER_LIST, component: ChapterList },
+  { path: ROUTE_NAME.LESSON_VIDEO_LIST, component: LessonVideoList },
+  { path: ROUTE_NAME.ADD_LESSON_QUESTION, component: AddLessonQuestion },
+  { path: ROUTE_NAME.LESSON_QUESTION_LIST, component: LessonQuestionList },
+  { path: ROUTE_NAME.ADD_LESSON_VIDEO, component: AddLessonVideo },
+  { path: ROUTE_NAME.ORDER_LIST, component: OrderList },
+  { path: ROUTE_NAME.ORDER_DETAIL, component: OrderDetail },
+  { path: ROUTE_NAME.REVENUE, component: Revenue },
 ];
 const privateRoutes = [];
 export { publicRoutes, privateRoutes };

@@ -1,11 +1,16 @@
 import { Fragment, useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import { publicRoutes } from "~/routes";
 import { DefaultLayout } from "~/layout";
 import { useDispatch, useSelector } from "react-redux";
 import Auth from "./pages/Auth/Auth";
 import WebFont from "webfontloader";
-import { setUser } from './redux/slices/profileSlice';
+import { setUser } from "./redux/slices/profileSlice";
 import { GET_USER_BY_ID } from "./redux/types/userTypes";
 
 function App() {
@@ -13,21 +18,22 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const userId = sessionStorage.getItem('userId');
+    const userId = sessionStorage.getItem("userId");
     if (!userId) setLoggedIn(false);
-    else dispatch({
-      type: GET_USER_BY_ID,
-      id: userId,
-    });
-  })
+    else
+      dispatch({
+        type: GET_USER_BY_ID,
+        id: userId,
+      });
+  });
 
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Diplomata SC", "Nerko One"]
-      }
-    })
-  }, [])
+        families: ["Diplomata SC", "Nerko One"],
+      },
+    });
+  }, []);
 
   return (
     <>
